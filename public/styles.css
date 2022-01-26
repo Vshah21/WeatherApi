@@ -1,0 +1,127 @@
+*, ::after,::before{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("https://media.fugro.com/media/images/default-source/services/survey/land-weather-forecast.jpg?sfvrsn=19be111a_19");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a{
+    color:aliceblue;
+}
+.container{
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px ;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 50px #ccc;
+
+}
+
+.content{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.header{
+    background-color: rgb(148, 10, 10);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.general-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.status{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.location{
+    font-size: 2rem;
+    font-weight: normal;
+    margin-top: 10px;
+}
+.detail-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+}
+.detail .title{
+    font-size: 2rem;
+    flex-grow: 1;
+    font-weight: bold;
+    color: #777;
+}
+
+.detail .value{
+    font-size: 2rem;
+    margin-top: 20px;
+}
+.bordered{
+    border-right: 1px solid black;
+}
+
+.city-search-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.city-search{
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 50%;
+    font-size: 1rem;
+}
+.search-btn{
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(192, 37, 37);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.search-btn:hover{
+    background-color: rgb(231, 60, 60);
+}
+
+.yahoo-api-logo{
+    position: fixed;
+    bottom: 0;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-left: 40%;
+}
+@media screen  and (max-width:600px){
+    .status{
+        font-size: 2rem;
+    }
+    .location{
+        font-size: 1rem;
+    }
+}
