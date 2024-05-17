@@ -7,9 +7,12 @@ body{
     background-image: url("https://media.fugro.com/media/images/default-source/services/survey/land-weather-forecast.jpg?sfvrsn=19be111a_19");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Montserrat', sans-serif;
 }
+
 a{
-    color:aliceblue;
+    color:black;
+    text-decoration: none;
 }
 .container{
     display: flex;
@@ -20,82 +23,50 @@ a{
     margin-top: 90px ;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 90%;
+    max-width: 700px;
     border-radius: 10px;
     box-shadow: 0 0 50px #ccc;
 
 }
 
 .content{
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: 100%;
+    padding:3rem;
+    text-align: center;
+}
+
+
+h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    color: #1e1e1e;
 
 }
 
-.header{
-    background-color: rgb(148, 10, 10);
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.location , .status{
+    font-size: 1.5rem;
+    font-weight: normal;
     
 }
-.general-information{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-}
-.status{
-    font-size: 3rem;
-    font-weight: bold;
-}
-.location{
-    font-size: 2rem;
-    font-weight: normal;
-    margin-top: 10px;
-}
-.detail-section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
 
-.detail{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-
-}
-.detail .title{
+.value{
     font-size: 2rem;
-    flex-grow: 1;
-    font-weight: bold;
-    color: #777;
-}
-
-.detail .value{
-    font-size: 2rem;
-    margin-top: 20px;
-}
-.bordered{
-    border-right: 1px solid black;
+    margin-top: 0.5rem;
 }
 
 .city-search-container{
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
+    
 }
 .city-search{
-    padding: 5px;
+    padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
-    width: 50%;
+    width: 100%;
     font-size: 1rem;
 }
 .search-btn{
@@ -110,18 +81,72 @@ a{
     background-color: rgb(231, 60, 60);
 }
 
-.yahoo-api-logo{
-    position: fixed;
-    bottom: 0;
-    align-self: center;
-    margin-bottom: 20px;
-    margin-left: 40%;
+footer{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
+
 @media screen  and (max-width:600px){
-    .status{
-        font-size: 2rem;
-    }
-    .location{
+    
+    
+    .location, .value, .status{
         font-size: 1rem;
     }
+    .detail-section{
+        flex-direction: column;
+        align-items: left;
+    }
+    .city-search-container, .city-search{
+        flex-direction: column;
+        width: 100%;
+    }
+    .weather-data{
+        text-align: left;
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+    .container{
+        width: 90%;
+       
+    }
+    .detail-section{
+        display: grid;
+    }
+    h1, .city-search-container{
+        margin-bottom: 2rem;
+    }
+   
+}
+
+@media screen and (min-width:601px) {
+    .detail{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .weather-data .title{
+        font-size: 1rem;
+    }
+    .detail-section{
+        padding-top: 2em;
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+    }
+    h1, .city-search-container{
+        margin-bottom: 2rem;
+    }
+    
+}
+
+@media screen and (min-width:1000px) {
+h1 {
+    font-size: 2.5rem;
+}
+
 }

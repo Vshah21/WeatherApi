@@ -15,6 +15,7 @@ submitBtn.addEventListener("click", ()=>{
 const  getWeather = async () => {
 
     try{
+        console.log(cityValue.value)
         let location  = cityValue.value
         const response = await fetch('/weather',{
             method:'POST',
@@ -41,10 +42,11 @@ const setWeatherData = (data) =>{
 
     const currentDay = data.current_observation 
     const location = data.location
+    console.log(data.location)
     let temp = currentDay.condition['temperature']
     celcius= (temp - 32) * 5/9;
 
-    locationElement.textContent = `${location['city']} , ${location['region']} `
+    locationElement.textContent = `${location['city']} , ${location['country']} `
     statusElement.textContent = currentDay.condition['text']
     windElement.textContent = currentDay.wind['speed']
     temperatureElement.textContent = Math.round(celcius);
